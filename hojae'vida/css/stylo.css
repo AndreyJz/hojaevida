@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Honk:MORF@24&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: "Anta", sans-serif;
+    scroll-behavior: smooth;
+    body { --scrollbar-width: 15px; --scrollbar-height: 15px; --scrollbar-border-radius: 36px; --scrollbar-border-thickness: 0px; --scrollbar-thumb-color: #00000099; --scrollbar-track-color: #FFFFFF00; --scrollbar-border-color: #FFFFFF00; --scrollbar-corner-color: #FFFFFF00; --scrollbar-button-color: #3F3F4600; } body::-webkit-scrollbar { width: var(--scrollbar-width, 20px); height: var(--scrollbar-height, 20px); }body::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb-color, #3B82F6); border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255)); border-radius: var(--scrollbar-border-radius, 4px); }body::-webkit-scrollbar-track { background: var(--scrollbar-track-color, #A1A1AA); }body::-webkit-scrollbar-corner { background: var(--scrollbar-corner-color, #FFFFFF); border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255)); border-radius: var(--scrollbar-border-radius, 4px); }body::-webkit-scrollbar-button:vertical:start:increment, #preview::-webkit-scrollbar-button:vertical:end:decrement, #preview::-webkit-scrollbar-button:horizontal:start:increment, #preview::-webkit-scrollbar-button:horizontal:end:decrement { display: var(--show-double-buttons, none); }
+}
+.contreiner{
+    display: flex;
+}
+
+.colum{
+
+    padding: 10px;
+    /* border: inset 3px #00000099; */
+    width: 33vw;
+    height: 98vw;
+}
+.colum2{
+    padding: 10px;
+    /* border: inset 3px #00000099; */
+    width: 33vw;
+    height: 98vw;
+}
+.colum3{
+    padding: 10px;
+    /* border: inset 3px #00000099; */
+    width: 33vw;
+    height: 98vw;
+}
+.pfp{
+    margin-left: 25%;
+    align-items: center;   /* Centrar elementos horizontalmente */
+    border-radius: 75%;
+    width: 50%;
+}
+.logo{
+    width: 50px;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-items: center;    /* Centrar elementos horizontalmente */
+    text-decoration: none;
+    background-color: rgb(214, 249, 238);
+    border-radius: 8%;
+    padding: 8px;
+    transition: .4s ease-in-out;
+    user-select: none;
+}
+.button:hover{
+    background-color: rgb(188, 250, 230);
+    scale: 1.05;
+}
+.button:visited{
+    text-decoration: underline;
+}
+
+.check{
+    display: flex;
+    
+}
+
+#contenidoAdicional {
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+  }
+  
+  #contenidoAdicional.oculto {
+    display: none;
+    opacity: 0;
+  }
+  
+  #mostrarContenido:checked ~ #contenidoAdicional {
+    display: block;
+    opacity: 1;
+  }
+
+/* DropDOWN */
+
+.body:has( .dropdown:target ){
+    --img1: scale(0);
+    --img2: scale(1);
+
+    --clip:inset(0 0 0 0);
+}
+
+.dropdown{
+    position: relative;
+    background-color: #000;
+    width: 75%;
+    max-width: 300px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1em;
+
+    display: grid;
+    align-content:center ;
+    gap: 1rem;
+
+    overflow-y: auto;
+
+
+    clip-path: var(--clip, inset(0 0 100% 100%));
+    transition: clip-path .5s;
+}
+
+.dropdown__list{
+    list-style: none;
+}
+
+.dropdown__link{
+    color: black;
+    padding: 1em .7em;
+    text-decoration: none;
+    
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+
+    position: relative;
+    background-color: var(--bg, transparent);
+    border-radius: 6px;
+}
+
+.dropdown__list:has( :checked ){
+    --rows: 1fr;
+    --rotate: rotate(180deg);
+}
+
+.dropdown__check{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.dropdown__arrow{
+    margin-left: auto;
+    transform: var(--rotate, 0);
+    transition: .45s transform;
+}
+
+.dropdown__content{
+    display: grid;
+    grid-template-rows: var(--rows, 0fr);
+    transition: .5s grid-template-rows;
+}
+
+.dropdown__sub{
+    overflow: hidden;
+
+}
+
+.dropdown__li{
+
+    list-style: none;
+    margin-left: 0;
+}
+
+
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+}
+.fa-caret-down {
+    float: right;
+    padding-right: 8px;
+}
