@@ -9,7 +9,7 @@
 .contreiner{
     display: flex;
     background-color: rgba(247, 177, 128, 0.644);
-    background-image: url("/images/Fondo_Negro_5.webp");
+    background-image: url("images/Fondo_Negro_5.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
