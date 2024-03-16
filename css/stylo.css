@@ -1,15 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Anta&family=Honk:MORF@24&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Passero+One&display=swap');
 *{
     box-sizing: border-box;
-    font-family: "Anta", sans-serif;
+    font-family: "Passero One", sans-serif;
     scroll-behavior: smooth;
-
     body { --scrollbar-width: 15px; --scrollbar-height: 15px; --scrollbar-border-radius: 36px; --scrollbar-border-thickness: 0px; --scrollbar-thumb-color: #463d7f5d; --scrollbar-track-color: #FFFFFF00; --scrollbar-border-color: #FFFFFF00; --scrollbar-corner-color: #FFFFFF00; --scrollbar-button-color: #3F3F4600; } body::-webkit-scrollbar { width: var(--scrollbar-width, 20px); height: var(--scrollbar-height, 20px); }body::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb-color, #3B82F6); border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255)); border-radius: var(--scrollbar-border-radius, 4px); }body::-webkit-scrollbar-track { background: var(--scrollbar-track-color, #A1A1AA); }body::-webkit-scrollbar-corner { background: var(--scrollbar-corner-color, #FFFFFF); border: var(--scrollbar-border-thickness, 3px) solid var(--scrollbar-border-color, rgb(255, 255, 255)); border-radius: var(--scrollbar-border-radius, 4px); }body::-webkit-scrollbar-button:vertical:start:increment, #preview::-webkit-scrollbar-button:vertical:end:decrement, #preview::-webkit-scrollbar-button:horizontal:start:increment, #preview::-webkit-scrollbar-button:horizontal:end:decrement { display: var(--show-double-buttons, none); }
 }
 .contreiner{
     display: flex;
-    background-color: rgba(247, 177, 128, 0.644);
-    background-image: url("/images/Fondo_Negro_5.webp");
+    background-image: url("../images/Fondo_Negro_5.webp"); /* .. porque no me servia la imagen al momento de montarlo en git, entonces me acorde de lo de la terminal de linux y el cd .. para desplazarme en carpetas :)*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,34 +18,23 @@
     padding: 10px;
     /* border: inset 3px #3a200e8e; */
     width: 33vw;
-    height: 70vw;
+    height: 115vw;
     color: #fff;
 }
-.colum2{
-    padding: 10px;
-    /* border: inset 3px #3a200e8e; */
-    width: 33vw;
-    height: 70vw;
-    color: #fff;
-}
-.colum3{
-    padding: 10px;
-    /* border: inset 3px #3a200e8e; */
-    width: 33vw;
-    height: 70vw;
-    color: #fff;
-}
+
 .info{
+    /* Pa que casi todo lo que toque se le ponga la animacion de realce */
     font-size: 20px;
     border-radius: 2%;
-    padding: 8px 8px 20px;
+    padding: 8px;
     transition: .4s ease-in-out;
 }
 
 .info:hover{
+    /* la animacion de realce */
     background: #7e7e7e3f;
     scale: 1.01; 
-    opacity: 1;
+
 }
 
 .show{
@@ -63,21 +51,15 @@
 }
 
 .show:hover{
+    /* se supone que es pa que cuando el usuario pase el mouse por NATIVO, el texto aparezca pero funciona si se pasa el mouse por encima de donde estaria el texto */
     opacity: 1;
     display: block;
 }
-
-
-/* 
-.show:hover.info{
-    display: block;
-} */
 
 .pfp{
     padding-top: 20px;
     padding-bottom: 20px;
     margin-left: 25%;
-    align-items: center;   /* Centrar elementos horizontalmente */
     border-radius: 75%;
     width: 50%;
     transition: .4s ease-in-out;
@@ -104,12 +86,10 @@
     transition: .4s ease-in-out;
     user-select: none;
 }
+
 .button:hover{
     background-color: rgba(67, 35, 85, 0.842);;
     scale: 1.05;
-}
-.button:visited{
-    text-decoration: underline;
 }
 
 .listado{
@@ -126,42 +106,23 @@
     scale: 1.05;
 }
 
-.check{
-    display: flex;
-    
-}
+/* --------------------------------------------DropDOWN----------------------------------------------- */
 
-#contenidoAdicional {
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-  }
-  
-  #contenidoAdicional.oculto {
-    display: none;
-    opacity: 0;
-  }
-  
-  #mostrarContenido:checked ~ #contenidoAdicional {
-    display: block;
-    opacity: 1;
-  }
 
-/* DropDOWN */
-
-.body:has( .dropdown:target ){
+.body:has( .dropdown:target ){ 
+    /* La animacion de caida */
     --img1: scale(0);
     --img2: scale(1);
-
     --clip:inset(0 0 0 0);
 }
 
-
 .dropdown__list{
+    /* Pa que no se vea feo */
     list-style: none;
 }
 
-
 .dropdown__link{
+    /* Pa que no se vea feo */
     color: #fff;
     padding: 1em .7em;
     text-decoration: none;
@@ -175,16 +136,19 @@
 }
 
 .dropdown__link:hover{
+    /* Pa que salga el boton transparente */
     background: #7e7e7e3f;
     scale: 1.01;
 }
 
 .dropdown__list:has( :checked ){
+    /* Pa cuando se checkee la checkbox se haga la animacion */
     --rows: 1fr;
     --rotate: rotate(180deg);
 }
 
 .dropdown__check{
+    /* Pa que la check box sea del largo del boton o algo asi y no se vea */
     position: absolute;
     width: 100%;
     height: 100%;
@@ -193,17 +157,38 @@
 }
 
 .dropdown__arrow{
+    /* Pa que la imagen de la flecha gire chevere */
     margin-left: auto;
     transform: var(--rotate, 0);
     transition: .45s transform;
 }
 
 .dropdown__content{
+    /* Se muestra el contenido y sale la animacion */
     display: grid;
     grid-template-rows: var(--rows, 0fr);
     transition: .5s grid-template-rows;
 }
 
 .dropdown__sub{
+    /* Pa que se esconda mientrastanto */
     overflow: hidden;
 }
+
+/* -----------------------------------------------FIN DROPDOWN---------------------------------------------- */
+
+footer{
+    position:fixed;
+    width: 100%;
+    height: 30px;
+    background-color: rgba(29, 23, 53, 0.97);
+    bottom: 0;
+}
+.textfooter{
+    position: absolute;;
+    inset: 0;
+    margin: auto;
+    align-items: center;
+    width: max-content;
+    height: min-content;
+    color: #fff;}
